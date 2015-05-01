@@ -1,0 +1,3 @@
+cruddly.controller('MainCtrl', function () {
+
+});

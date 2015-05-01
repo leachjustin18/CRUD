@@ -1,0 +1,14 @@
+<!-- CREATE partial -->
+<div class="panel panel-default" ng-controller="DeleteCtrl">
+    <form>
+        <div class="form-group">
+
+            <h3 id="deleteInput" ng-model="model.name">Are you sure you want to delete: {{model.name}}?</h3>
+        </div>
+        <button ng-click="remove();" type="submit" class="btn btn-danger">Confirm</button>
+
+        <a ui-sref="read" role="button" class="btn btn-info">No</a>
+    </form>
+</div>
+
+

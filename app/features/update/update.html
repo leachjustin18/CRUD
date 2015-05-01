@@ -1,0 +1,11 @@
+<!-- CREATE partial -->
+<div class="panel panel-default" ng-controller="UpdateCtrl">
+    <form>
+        <div class="form-group">
+            <label for="updateInput">Name</label>
+            <input id="updateInput" type="text" name="updated" placeholder="...update..." ng-model="model.name">
+        </div>
+
+        <button ng-click="update(id, model.name);" type="submit" class="btn btn-info">Update</button>
+    </form>
+</div>

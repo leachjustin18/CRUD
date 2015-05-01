@@ -1,0 +1,16 @@
+<!-- CREATE partial -->
+<div class="panel panel-default" ng-controller="ReadCtrl">
+    <div class="panel-heading">READ</div>
+
+    <table class="table table-bordered table-striped">
+        <tr ng-repeat="item in read">
+            <th><span>Name:</span> {{item.name}}</th>
+            <td>
+                <a ui-sref="update({id:item.id})" style="display: block">Update</a>
+            </td>
+            <td>
+                <a ui-sref="delete({id:item.id})" style="display: block">Delete</a> 
+            </td>
+        </tr>
+    </table>
+</div>

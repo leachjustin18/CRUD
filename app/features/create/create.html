@@ -1,0 +1,10 @@
+<!-- CREATE partial -->
+<div class="panel panel-default" ng-controller="CreateCtrl">
+    <form>
+        <div class="form-group">
+            <span for="createInput" class="lead">Name</span>
+            <input id="createInput" type="text" name="created" placeholder="...create..." ng-model="model.name">
+        </div>
+        <button ng-click="create();" type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

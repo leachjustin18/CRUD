@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>CRUDDLY</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="//content.hallmark.com/assets/images/favicon.ico" type="image/ico" rel="shortcut icon">
+        <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+        <script src="https://code.angularjs.org/1.4.0-rc.0/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.14/angular-ui-router.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.5.0/lodash.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css">
+    </head>
+    <body ng-app="cruddly">
+        <div ng-controller="MainCtrl">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Welcome To Cruddly&reg;</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <h2>Create, read, update and delete your CRUD.</h2>
+                        <p>Click a button below to go through the CRUDDLY process.</p>
+                        <div class="js-tabpanel" role="tabpanel">
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs nav-tabs-justified" role="tablist">
+                                <li class="active tabs" role="presentation" ui-sref-active="active"><a ui-sref="create" aria-controls="create" role="tab" data-toggle="tab">C</a></li>
+                                <li class="tabs" role="presentation" ui-sref-active="active"><a ui-sref="read" aria-controls="read" role="tab" data-toggle="tab">R</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane in active" id="create">CREATED CONTENT</div>
+                                <div role="tabpanel" class="tab-pane fade" id="read">READ CONTENT</div>
+                                <div role="tabpanel" class="tab-pane fade" id="update">UPDATED CONTENT</div>
+                                <div role="tabpanel" class="tab-pane fade" id="delete">DELETED CONTENT</div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- UI-VIEW TARGET CONTAINER -->
+                <div class="row">
+                    <div ui-view>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            var tabPanel = document.querySelector('.js-tabpanel');
+
+            tabPanel.addEventListener('click', function (e) {
+
+                if (e.target.nodeName === 'A') {
+                    e.preventDefault();
+                    // e.target.style.backgroundColor = 'red';
+                }
+
+            });
+        </script>
+        <script src="app.js"></script>
+        <script src="MainCtrl.js"></script>
+        <script src="../app/features/create/CreateCtrl.js"></script>
+        <script src="../app/features/read/ReadCtrl.js"></script>
+        <script src="../app/features/update/UpdateCtrl.js"></script>
+        <script src="../app/features/delete/DeleteCtrl.js"></script>
+        <script src="services/DataSource.js"></script>
+    </body>
+</html>
