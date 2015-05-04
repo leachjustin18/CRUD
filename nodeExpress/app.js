@@ -4,6 +4,10 @@ var path = require('path');
 var home = require('./routes/index');
 var about = require('./routes/about');
 
+
+// set our port
+var port = process.env.PORT || 3000; 
+
 //Use gulp-express with express 
 var app = module.exports.app = exports.app = express();
 
@@ -19,5 +23,5 @@ app.use('/about', about);
 app.use(express.static(path.join(__dirname, '/public')));
 
 //Local server with port 3000
-app.listen(3000);
+app.listen(port);
 
