@@ -1,18 +1,8 @@
 var express = require('express');
 var app = module.exports.app = exports.app = express();
+var about = require('./routes/about');
 
-app.get('/', function (req, res) {
-  res.send('Hello World!');
-});
-
-app.get('/about', function (req, res) {
-  res.send('Hello About');
-});
-
-
-app.get('/Justin', function (req, res) {
-  res.send('Hello justin!');
-});
+app.use('/about', about);
 
 var server = app.listen(3000, function () {
 
