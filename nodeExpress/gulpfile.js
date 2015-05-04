@@ -19,7 +19,6 @@ gulp.task('server', function () {
         //see https://github.com/gimm/gulp-express#servernotifyevent 
     });
  
-    gulp.watch(['app/scripts/**/*.js'], ['jshint']);
     gulp.watch(['app/images/**/*'], server.notify);
     gulp.watch(['app.js', 'routes/**/*.js'], [server.run]);
 });
