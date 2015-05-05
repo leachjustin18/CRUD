@@ -2,7 +2,7 @@
 var express = require('express');
 var path = require('path');
 var home = require('./routes/index');
-var about = require('./routes/about');
+var userlist = require('./routes/users');
 
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -26,7 +26,7 @@ app.set('views', __dirname + '/views');
 
 //Use routes
 app.use('/', home);
-app.use('/about', about);
+app.use('/users', userlist);
 
 //Specify where to look for CSS, JS, etc. 
 app.use(express.static(path.join(__dirname, '/public')));
