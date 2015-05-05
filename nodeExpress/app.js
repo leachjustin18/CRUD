@@ -4,11 +4,21 @@ var path = require('path');
 var home = require('./routes/index');
 var about = require('./routes/about');
 
+var mongo = require('mongodb');
+var monk = require('monk');
+var db = monk('localhost:27017/expressTest');
+
 // set our port
 var port = process.env.PORT || 3000; 
 
 //Use gulp-express with express 
 var app = module.exports.app = exports.app = express();
+
+// Make our db accessible to our router
+app.use(function(req,res,next){
+    req.db = db;
+    next();
+});
 
 //Handlebars set up for redering engine and views
 app.set('view engine', 'hbs'); 
