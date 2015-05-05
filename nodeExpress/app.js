@@ -4,7 +4,6 @@ var path = require('path');
 var home = require('./routes/index');
 var about = require('./routes/about');
 
-
 // set our port
 var port = process.env.PORT || 3000; 
 
