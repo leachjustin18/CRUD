@@ -8,9 +8,9 @@
 	        res.render('users', {
 	            pageName: 'Users',
 	            layout: 'layouts/shell',
-	            "users": docs
+	            'users': docs
 	        });
 	    });
 	});
-
+	
 	module.exports = router;

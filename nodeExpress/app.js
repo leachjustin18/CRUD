@@ -1,8 +1,14 @@
 //Pull in required files
 var express = require('express');
 var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
+var cookieParser = require('cookie-parser');
+var bodyParser = require('body-parser');
 var home = require('./routes/index');
-var userlist = require('./routes/users');
+var users = require('./routes/users');
+var newUser = require('./routes/newUser');
+
 
 var mongo = require('mongodb');
 var monk = require('monk');
@@ -26,10 +32,14 @@ app.set('views', __dirname + '/views');
 
 //Use routes
 app.use('/', home);
-app.use('/users', userlist);
+app.use('/users', users);
+app.use('/newuser', newUser);
 
 //Specify where to look for CSS, JS, etc. 
 app.use(express.static(path.join(__dirname, '/public')));
+
+// parse application/json
+app.use(bodyParser.json())
 
 //Local server with port 3000
 app.listen(port);

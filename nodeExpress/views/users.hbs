@@ -1,6 +1,24 @@
-  <ul>
-  {{#each users}}
-  	<li>Email: {{email}}</li>
-    <li>Name: {{name}}</li>
-  {{/each}}
- </ul>
+<div class="table-responsive">
+    <table class="table  table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each users}}
+            <tr>
+                <td>{{email}}</td>
+                <td>{{username}}</td>
+                <td>{{name}}</td>
+                <td>{{password}}</td>
+                <td><button class="btn btn-info">Edit</button></td>
+                    <td><button class="btn btn-danger">Delete</button></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
