@@ -1,23 +1,27 @@
-<div class="table-responsive">
-    <table class="table  table-striped">
-        <thead>
-            <tr>
-                <th>Email</th>
-                <th>Username</th>
-                <th>Name</th>
-                <th>Password</th>
-            </tr>
-        </thead>
-        <tbody>
-            {{#each editUsersInformation}}
-            <tr>
-                <td><input type="email" value="{{email}}"></input></td>
-                <td><input type="text" value="{{username}}"></input></td>
-                <td><input type="text" value="{{name}}"></input></td>
-                <td><input type="text" value="{{password}}"></input></td>
-                    <td><a href="" class="btn btn-info" role="button">Update</a></td>
-            </tr>
-            {{/each}}
-        </tbody>
-    </table>
-</div>
+<form id="myform" action="/edituser/updatecurrentuser" method="post">
+    {{#each editUsersInformation}}
+    <div class="form-group">
+        <label for="inputEmail">Email</label>
+        <input type="email" class="form-control" id="inputEmail" name="updateduseremail" placeholder="Email" value="{{email}}">
+    </div>
+
+    <div class="form-group">
+        <label for="inputUsername">User name</label>
+        <input type="text" class="form-control" id="inputUsername" name="updatedusername" placeholder="User name" value="{{username}}">
+    </div>
+
+    <div class="form-group">
+        <label for="inputPassword">Password</label>
+        <input type="text" class="form-control" id="inputPassword" name="updateduserpassword" placeholder="Password" value="{{password}}">
+    </div>
+
+
+    <div class="form-group">
+        <label for="inputName">Name</label>
+        <input type="text" class="form-control" id="inputName" name="updatedname" placeholder="Name" value="{{name}}">
+    </div>
+    {{/each}}
+
+    <button type="submit" class="btn btn-primary">Update</button>
+
+</form>

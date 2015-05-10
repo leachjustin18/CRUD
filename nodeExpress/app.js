@@ -35,7 +35,7 @@ app.set('views', __dirname + '/views');
 app.use('/', home);
 app.use('/users', users);
 app.use('/newuser', newUser);
-app.use('/editUser', editUser);
+app.use('/edituser', editUser);
 
 //Specify where to look for CSS, JS, etc. 
 app.use(express.static(path.join(__dirname, '/public')));
