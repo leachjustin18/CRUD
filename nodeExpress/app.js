@@ -9,6 +9,7 @@ var home = require('./routes/index');
 var users = require('./routes/users');
 var newUser = require('./routes/newUser');
 var editUser = require('./routes/editUser');
+var deleteUser = require('./routes/deleteUser'); 
 
 
 var mongo = require('mongodb');
@@ -36,6 +37,7 @@ app.use('/', home);
 app.use('/users', users);
 app.use('/newuser', newUser);
 app.use('/edituser', editUser);
+app.use('/deleteUser', deleteUser);
 
 //Specify where to look for CSS, JS, etc. 
 app.use(express.static(path.join(__dirname, '/public')));

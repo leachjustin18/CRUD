@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 var bodyParser = require('body-parser');
 
+//Variable we use in get and post
 var userId;
-
 
 // create application/x-www-form-urlencoded parser 
 var urlencodedParser = bodyParser.urlencoded({
@@ -51,7 +51,6 @@ router.get('/', function(req, res) {
                 'email': userEmail,
                 'password': userPassword,
                 'name': name
-
             }
         },
         function(err, doc) {

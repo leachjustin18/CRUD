@@ -1,5 +1,8 @@
+
+<h2>Are you sure you want to delete:</h2>
+<form id="myform" action="/deleteuser/deleteCurrentUser" method="post">
 <div class="table-responsive">
-    <table class="table table-striped">
+    <table class="table">
         <thead>
             <tr>
                 <th>Email</th>
@@ -9,17 +12,20 @@
             </tr>
         </thead>
         <tbody>
-            {{#each users}}
+            {{#each deleteUsersInformation}}
             <tr>
                 <td>{{email}}</td>
                 <td>{{username}}</td>
                 <td>{{password}}</td>
                 <td>{{name}}</td>
-
-                <td><a href="/edituser?id={{_id}}" class="btn btn-info" role="button">Edit</a></td>
-                <td><a href="/deleteuser?id={{_id}}" class="btn btn-danger" role="button">Delete</a></td>
             </tr>
             {{/each}}
         </tbody>
     </table>
 </div>
+
+    <button type="submit" class="btn btn-danger">Delete</button>
+        
+    <a href="/users" class="btn btn-info" role="button">Don't delete</a>
+
+</form>
