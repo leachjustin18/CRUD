@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var home = require('./routes/index');
 var users = require('./routes/users');
 var newUser = require('./routes/newUser');
+var editUser = require('./routes/editUser');
 
 
 var mongo = require('mongodb');
@@ -34,6 +35,7 @@ app.set('views', __dirname + '/views');
 app.use('/', home);
 app.use('/users', users);
 app.use('/newuser', newUser);
+app.use('/editUser', editUser);
 
 //Specify where to look for CSS, JS, etc. 
 app.use(express.static(path.join(__dirname, '/public')));

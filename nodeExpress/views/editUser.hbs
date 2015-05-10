@@ -1,0 +1,23 @@
+<div class="table-responsive">
+    <table class="table  table-striped">
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each editUsersInformation}}
+            <tr>
+                <td><input type="email" value="{{email}}"></input></td>
+                <td><input type="text" value="{{username}}"></input></td>
+                <td><input type="text" value="{{name}}"></input></td>
+                <td><input type="text" value="{{password}}"></input></td>
+                    <td><a href="" class="btn btn-info" role="button">Update</a></td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+</div>
