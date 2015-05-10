@@ -3,7 +3,7 @@ var router = express.Router();
 var bodyParser = require('body-parser');
 
 // create application/x-www-form-urlencoded parser 
-var urlencodedParser = bodyParser.urlencoded({ extended: false })
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 router.get('/', function(req, res){
 	res.render('newUser', { 
